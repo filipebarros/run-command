@@ -1,0 +1,15 @@
+name: 'Get environment from comment'
+description: 'Parses comment through '
+inputs:
+  command:
+    description: 'Who to greet'
+    required: true
+  result:
+    description: 'Where to store the result'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
+    - ${{ inputs.result }}
